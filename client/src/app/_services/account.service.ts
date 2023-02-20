@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, map } from 'rxjs';
+import { environment } from 'src/environments/environment.development';
 import { User } from '../_models/users';
 
 @Injectable({
@@ -8,7 +9,7 @@ import { User } from '../_models/users';
 })
 export class AccountService {
 
-  baseUrl = "http://localhost:5001/api/";
+  baseUrl = environment.apiUrl;
   // union type <User | null>  can be either
   private currentUserSource = new BehaviorSubject<User | null>(null);
   // $ signifies an observable
