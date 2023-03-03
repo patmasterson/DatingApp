@@ -1,3 +1,4 @@
+using System.Globalization;
 using API.DTOs;
 using API.Entities;
 using API.Extensions;
@@ -15,6 +16,10 @@ namespace API.Helper
                 .ForMember(dest => dest.Age, opt => opt.MapFrom(src => src.DateOfBirth.CalculateAge()));
             CreateMap<Photo, PhotoDto>();
             CreateMap<MemberUpdateDto, AppUser>();
+            CreateMap<RegisterDto, AppUser>();
+            
+
+
         }
     }
 }
